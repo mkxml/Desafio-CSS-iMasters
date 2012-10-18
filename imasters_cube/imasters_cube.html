@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+	Introduction in English:
+
+		WARNING: EXPERIMENTAL CODE, USE ONLY IN OTHER EXPERIMENTS.
+
+		CSS challenge: iMasters Cube from Bernard de Luna
+
+		Author: Matheus R. Kautzmann
+
+		Important: Compatible with Chrome and Firefox (10/18/2012) as an experiment, do not use this code in production.
+
+	Introdução em Português:
+
+		Desafio css: iMasters Cube do Bernard de Luna
+
+		Autor: Matheus R. Kautzmann
+
+		Importante: Compatível com Chrome e Firefox (18/10/2012) como experimento, não se baseie neste arquivo para uso em produção.
+
+ -->
+<head>
+	<title>iMasters Cube - Matheus Kautzmann</title>
+	<style>
+		#container {
+
+			width: 240px;
+			height: 240px;
+			margin:120px auto;
+			-webkit-perspective: 800;
+			-webkit-perspective-origin: 50% 120px;
+			-moz-perspective: 800;
+			-moz-perspective-origin: 50% 120px;
+			perspective: 800;
+			perspective-origin: 50% 120px;
+		}
+
+		#imasters-cube {
+			width:inherit;
+			height:inherit;
+			position:relative;
+			-webkit-transform-style: preserve-3d;
+			-webkit-animation: animacaocubo 2s linear infinite;
+			-moz-transform-style: preserve-3d;
+			-moz-animation: animacaocubo 2s linear infinite;
+			transform-style: preserve-3d;
+			animation: animacaocubo 2s linear infinite;
+
+
+		}
+
+		#imasters-cube div {
+
+			width:inherit;
+			height:inherit;
+			position:absolute;
+			top:0;
+			left:0;
+
+			border-top: 2px solid #FFF;
+			border-left: 2px solid #FFF;
+
+		}
+
+		.front {
+
+			-webkit-transform: translateZ(120px);
+			-moz-transform: translateZ(120px);
+			transform: translateZ(120px);
+
+			background-image: 
+			-webkit-linear-gradient(top, #E16300 0px,#E16300 78px, #FFF 78px, #FFF 80px),
+			-webkit-linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			-webkit-linear-gradient(left, rgba(29, 140, 158, 0.92) 0px, rgba(29, 140, 158, 0.92) 78px,#FFF 78px,#FFF 80px);
+			background-image: 
+			-moz-linear-gradient(top, #E16300 0px,#E16300 78px, #FFF 78px, #FFF 80px),
+			-moz-linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			-moz-linear-gradient(left, rgba(29, 140, 158, 0.92) 0px, rgba(29, 140, 158, 0.92) 78px,#FFF 78px,#FFF 80px);
+			background-image: 
+			linear-gradient(top, #E16300 0px,#E16300 78px, #FFF 78px, #FFF 80px),
+			linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			linear-gradient(left, rgba(29, 140, 158, 0.92) 0px, rgba(29, 140, 158, 0.92) 78px,#FFF 78px,#FFF 80px);
+			background-size: 78px 80px, 80px 80px, 80px 80px;
+			background-position: 80px 0, 0 0, 0 0;
+			background-repeat:repeat-y, repeat, repeat;
+
+		}
+
+		.back {  
+			-webkit-transform: rotateY(180deg) translateZ(120px);
+			-moz-transform: rotateY(180deg) translateZ(120px);
+			transform: rotateY(180deg) translateZ(120px);
+		}
+
+		.top {
+
+			-webkit-transform: rotateX(90deg) translateZ(120px);
+			-moz-transform: rotateX(90deg) translateZ(120px);
+			transform: rotateX(90deg) translateZ(120px);
+
+			background-image: 
+			-webkit-linear-gradient(top, #A4181A 0px,#A4181A 78px, #FFF 78px, #FFF 80px),
+			-webkit-linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			-webkit-linear-gradient(left, rgba(29, 140, 158, 0.92) 0px, rgba(29, 140, 158, 0.92) 78px,#FFF 78px,#FFF 80px);
+			background-image: 
+			-moz-linear-gradient(top, #A4181A 0px,#A4181A 78px, #FFF 78px, #FFF 80px),
+			-moz-linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			-moz-linear-gradient(left, rgba(29, 140, 158, 0.92) 0px, rgba(29, 140, 158, 0.92) 78px,#FFF 78px,#FFF 80px);
+			background-image: 
+			linear-gradient(top, #A4181A 0px,#A4181A 78px, #FFF 78px, #FFF 80px),
+			linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			linear-gradient(left, rgba(29, 140, 158, 0.92) 0px, rgba(29, 140, 158, 0.92) 78px,#FFF 78px,#FFF 80px);
+			background-size: 78px 80px, 80px 80px, 80px 80px;
+			background-position: 80px 160px, 0 0, 0 0;
+			background-repeat:no-repeat, repeat, repeat;
+
+		}
+
+		.right {
+			-webkit-transform: rotateY(90deg) translateZ(120px);
+			-moz-transform: rotateY(90deg) translateZ(120px);
+			transform: rotateY(90deg) translateZ(120px);
+
+			background-image: 
+			-webkit-linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			-webkit-linear-gradient(left, rgba(29, 140, 158, 0.92) 0px, rgba(29, 140, 158, 0.92) 78px,#FFF 78px,#FFF 80px);
+			background-image: 
+			-moz-linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			-moz-linear-gradient(left, rgba(29, 140, 158, 0.92) 0px, rgba(29, 140, 158, 0.92) 78px,#FFF 78px,#FFF 80px);
+			background-image: 
+			linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			linear-gradient(left, rgba(29, 140, 158, 0.92) 0px, rgba(29, 140, 158, 0.92) 78px,#FFF 78px,#FFF 80px);
+			background-size: 80px 80px, 80px 80px;
+			background-repeat:repeat, repeat;
+		}
+
+		.bottom {
+			-webkit-transform: rotateX(-90deg) translateZ(120px) rotate(180deg);
+			-moz-transform: rotateX(-90deg) translateZ(120px) rotate(180deg);
+			transform: rotateX(-90deg) translateZ(120px) rotate(180deg);
+		}
+
+		.left {
+
+			-webkit-transform: rotateY(-90deg) translateZ(120px);
+			-moz-transform: rotateY(-90deg) translateZ(120px);
+			transform: rotateY(-90deg) translateZ(120px);
+
+		}
+
+		.left, .back, .bottom {
+
+			background-image: 
+			-webkit-linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			-webkit-linear-gradient(left, #0E6271 0px,#0E6271 78px,#FFF 78px,#FFF 80px);
+			background-image: 
+			-moz-linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			-moz-linear-gradient(left, #0E6271 0px,#0E6271 78px,#FFF 78px,#FFF 80px);
+			background-image: 
+			linear-gradient(top, transparent 0px, transparent 78px,#FFF 78px,#FFF 80px),
+			linear-gradient(left, #0E6271 0px,#0E6271 78px,#FFF 78px,#FFF 80px);
+			background-size: 80px 80px, 80px 80px;
+			background-repeat:repeat, repeat;
+
+		}
+
+		@-webkit-keyframes animacaocubo {
+
+			0% {
+				-webkit-transform: rotateX(0deg) rotateY(0deg);
+				transform: rotateX(0deg) rotateY(0deg);
+			}
+
+			50% {
+				-webkit-transform: rotateX(180deg) rotateY(180deg);
+				transform: rotateX(180deg) rotateY(180deg);
+			}
+
+			100% {
+				-webkit-transform: rotateX(360deg) rotateY(360deg);
+				transform: rotateX(360deg) rotateY(360deg);
+			}
+		}
+
+		@-moz-keyframes animacaocubo {
+
+			0% {
+				-moz-transform: rotateX(0deg) rotateY(0deg);
+				transform: rotateX(0deg) rotateY(0deg);
+			}
+
+			50% {
+				-moz-transform: rotateX(180deg) rotateY(180deg);
+				transform: rotateX(180deg) rotateY(180deg);
+			}
+
+			100% {
+				-moz-transform: rotateX(360deg) rotateY(360deg);
+				transform: rotateX(360deg) rotateY(360deg);
+			}
+		}
+
+		@keyframes animacaocubo {
+
+			0% {
+				-moz-transform: rotateX(0deg) rotateY(0deg);
+				transform: rotateX(0deg) rotateY(0deg);
+			}
+
+			50% {
+				-moz-transform: rotateX(180deg) rotateY(180deg);
+				transform: rotateX(180deg) rotateY(180deg);
+			}
+
+			100% {
+				-moz-transform: rotateX(360deg) rotateY(360deg);
+				transform: rotateX(360deg) rotateY(360deg);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="imasters-cube">
+			<div class="front"></div>
+			<div class="back"></div>
+			<div class="top"></div>
+			<div class="right"></div>
+			<div class="bottom"></div>
+			<div class="left"></div>
+		</div>
+	</div>
+</body>
+</html>
