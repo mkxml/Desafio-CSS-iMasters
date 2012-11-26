@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--
+
+		Esta é uma das soluções ao segundo experimento de CSS proposto pelo iMasters.
+		Nome do experimento: iMasters Sun
+
+		Compatibilidade: Navegadores WebKit atualizados, como Chrome e Safari.
+
+		This is one of the possible solutions for the second CSS experiment proposes by iMasters.
+
+		Name: iMasters Sun
+
+		Compatibility: Up to date WebKit browsers, like Chrome and Safari.
+
+	-->
+	<title>Desafio iMasters 02 - Matheus Kautzmann</title>
+	<style>
+		.sun {
+
+			width:400px;
+			height:400px;
+
+			position:relative;
+
+			margin:20px auto;
+
+
+			background:-webkit-radial-gradient(circle, #FE0002 50%, #BB0000 70%);
+			background:-moz-radial-gradient(circle, #FE0002 50%, #BB0000 70%);
+			background:-ms-radial-gradient(circle, #FE0002 50%, #BB0000 70%);
+			background:-o-radial-gradient(circle, #FE0002 50%, #BB0000 70%);
+
+			-webkit-border-radius:400px;
+			-moz-border-radius:400px;
+			-o-border-radius:400px;
+			-ms-border-radius:400px;
+			border-radius:400px;
+
+			border:10px dotted #FFF;
+		}
+
+		.sun::before {
+			content: '';
+			width:260px;
+			height:260px;
+
+			position:absolute;
+
+			top:60px;
+			left:60px;
+
+			-webkit-border-radius:260px;
+			-moz-border-radius:260px;
+			-ms-border-radius:260px;
+			-o-border-radius:260px;
+			border-radius:260px;
+
+			border:10px dotted #FE0002;
+
+
+			background:-webkit-radial-gradient(circle, #FFA200 50%, #FF7C00 70%);
+			background:-moz-radial-gradient(circle, #FFA200 50%, #FF7C00 70%);
+
+			background:-ms-radial-gradient(circle, #FFA200 50%, #FF7C00 70%);
+
+			background:-o-radial-gradient(circle, #FFA200 50%, #FF7C00 70%);
+		}
+
+		.sun::after {
+			content:'';
+			width:140px;
+			height:140px;
+			position:absolute;
+			top:120px;
+			left:120px;
+
+			background:#FF0;
+
+			-webkit-border-radius:140px;
+			-moz-border-radius:140px;
+			-ms-border-radius:140px;
+			-o-border-radius:140px;
+			border-radius:140px;
+
+			border:10px dotted #FFA200;
+		}
+	</style>
+</head>
+<body>
+	<div class="sun"></div>
+</body>
+</html>
